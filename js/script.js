@@ -146,8 +146,6 @@ sammy = Sammy('body', function () {
 			sammy.runRoute ( 'get', '/#/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
 				
 		});
-		
-
 	}); 
 
 
