@@ -5,7 +5,7 @@
   <h1>Photos</h1>
   
   <% for ( var i = 0; i < gal.length; i++ ) { %>
-  <a href="/photos/<%= gal[i].attr('id') %>" class="<%= gal[i].attr('id') %>">
+  <a href="/#/photos/<%= gal[i].attr('id') %>" class="<%= gal[i].attr('id') %>">
     <span class="arrow"></span>
     <span class="year"><%=  gal[i].attr('year').toString().slice(2) %></span>
     <span class="season"><%= gal[i].attr('season') %></span>
@@ -16,11 +16,11 @@
   
   <h1>Videos</h1>
   
-  <a href="/videos/fall_2011">
+  <a href="/#/videos/fall_2011">
     <img scr="http://images.pictureshunt.com/pics/w/white_kitten-8369.jpg" class="video"/>
   </a>
   
-  <a href="/videos/spring_2011">
+  <a href="/#/videos/spring_2011">
 <img scr="http://www.webdesign.org/img_articles/7072/BW-kitten.jpg" class="video"/>
     
   </a>

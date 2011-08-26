@@ -32,7 +32,7 @@ function initView(){
 	});
 	$(window).trigger('adjustCssSizes'); //we also trigger the view fix on init 
 	
-	sammy.run('/');
+	sammy.run('/#/');
 	
 }
 
@@ -135,7 +135,7 @@ sammy = Sammy('body', function () {
 
 
 		/////////////// LOAD ROUTE (homepage)
-		this.get('/', function (context) {
+		this.get('/#/', function (context) {
 		
 		
 		initTemplates(context, function(context){
@@ -143,7 +143,7 @@ sammy = Sammy('body', function () {
 			 //scrollBase();
 			$('html').scrollTo({ top:0, left:190 }, 50);
 			bodyClass(context, 'home');
-			sammy.runRoute ( 'get', '/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
+			sammy.runRoute ( 'get', '/#/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
 				
 		});
 		
@@ -152,7 +152,7 @@ sammy = Sammy('body', function () {
 
 
 	///////////////
-	this.get('/collections', function (context) {
+	this.get('/#/collections', function (context) {
 		//This Route shows the menu, but doesn't change the content!
 		var col = this.params['col'];
 		//alert("col = "+ col);
@@ -166,7 +166,7 @@ bodyClass(context, 'home');
 
 
 	//////////////////
-	this.get('/photos/:col', function (context) {
+	this.get('/#/photos/:col', function (context) {
 	//	alert('col route!!');
 		var col = this.params['col'];
 		bodyClass(context, 'home');
@@ -196,7 +196,7 @@ bodyClass(context, 'home');
 	}); // eo route
 
 	///////////////////////
-	this.get('/infos', function (context) {
+	this.get('/#/infos', function (context) {
 		//alert("infos");
 		bodyClass(context, 'info');
 		scrollBase();
@@ -206,7 +206,7 @@ bodyClass(context, 'home');
 	}); // eo route
 	
 	
-	this.get('/bio', function (context) {
+	this.get('/#/bio', function (context) {
 		bodyClass(context, 'bio');
 		scrollBase();
 		initTemplates(context, function(context){
@@ -214,7 +214,7 @@ bodyClass(context, 'home');
 		});
 	}); // eo route
 	
-	this.get('/credits', function (context) {
+	this.get('/#/credits', function (context) {
 		bodyClass(context, 'credit');
 		scrollBase();
 		initTemplates(context, function(context){
