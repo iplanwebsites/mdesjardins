@@ -40,7 +40,7 @@ div, h1, h2, h3, h4, ul, li, p{
 	font-weight:normal;
 }
 .sign{
-	background:url((/img/sign.jpg) no-repeat;
+	background:url('/img/sign.jpg') no-repeat;
 	width:14px;
 	height:13px;
 	float:left;
@@ -77,14 +77,14 @@ div, h1, h2, h3, h4, ul, li, p{
 
 }
 .content{
-	background:url(/img/contentbg.jpg) no-repeat;
+	background:url('/img/contentbg.jpg') no-repeat;
 }
 .contentinner{
 }
 
 
 .contentbox{
-	background:url(/img/contentboxbbg.png) repeat;
+	background:url('/img/contentboxbbg.png') repeat;
 	width:404px;
 	height:132px;
 	margin-left:30px;
@@ -103,7 +103,7 @@ div, h1, h2, h3, h4, ul, li, p{
 	margin-top:32px;
 }
 .infoboxr{
-	background:url(/img/contentboxbbg.png) repeat;
+	background:url('/img/contentboxbbg.png') repeat;
 	width:426px;
 	height:89px;
 	margin-bottom:20px;
@@ -115,7 +115,7 @@ div, h1, h2, h3, h4, ul, li, p{
 	font-weight:normal;
 }
 .bountiquebox{
-	background:url(/img/contentboxbbg.png) repeat;
+	background:url('/img/contentboxbbg.png') repeat;
 	width:427px;
 	height:158px;
 }
@@ -151,7 +151,7 @@ span.le{
 	color:#fff;
 }
 .fisherbox{
-	background:url(/img/contentboxbbg.png) repeat;
+	background:url('/img/contentboxbbg.png') repeat;
 	width:307px;
 	height:138px;
 	margin-top:20px;
@@ -172,11 +172,9 @@ span.le{
 }
 
 .content1{
-	background:url(/img/creditbg.png) repeat-x;
+	background:url('/img/creditbg.png') repeat-x;
 	height:667px;
 }
-
-
 /*credit*/
 .sitebox{
 	width:272px;
@@ -185,7 +183,7 @@ span.le{
 	margin-top:30px;
 }
 .siteline{
-	background:url(/img/linecontent1.png) no-repeat left;
+	background:url('/img/linecontent1.png') no-repeat left;
 	width:3px;
 	height:437px;
 	margin:5px 0 0 5px;
@@ -254,7 +252,7 @@ span.para{
 	font-weight:normal;
 }
 .logobg{
-	background:url(/img/logobg.png) no-repeat;
+	background:url('/img/logobg.png') no-repeat;
 	width:184px;
 	height:80px;
 	margin-top:30px;
@@ -298,17 +296,17 @@ span.logo{
 	background:#000 repeat-x;
 }
 .content2bg{
-	background:url(/img/biobg.jpg) repeat-x;
+	background:url('/img/biobg.jpg') repeat-x;
 	height:667px;
 	position:relative;
 }
 .imgbio{
-	background:url(/img/img.jpg) no-repeat;
+	background:url('/img/img.jpg') no-repeat;
 	width:669px;
 	height:668px;
 }
 .textbgbox{
-	background:url(/img/textbg3.png) repeat;
+	background:url('/img/textbg3.png') repeat;
 	width:752px;
 	position:absolute;
 	top:10px;
