@@ -28,6 +28,9 @@ function initView(){
 			var gal_h = window_h - (70 + 60);  //these are the footer + header height...
 			if(gal_h >=800){gal_h=800}//set max height
 			$('section#home').css('height', gal_h);
+			$('section#info').css('height', gal_h);
+			$('section#bio').css('height', gal_h);
+			$('section#credit').css('height', gal_h);
 			// ALSO adjust Width accordingly???
 	});
 	$(window).trigger('adjustCssSizes'); //we also trigger the view fix on init 
