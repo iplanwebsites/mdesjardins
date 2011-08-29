@@ -13,6 +13,26 @@ $(window).resize(function() {
 
 
 
+$(window).scroll(function(){
+	if(this.scrollingTo) clearTimeout(this.scrollingTo);
+  this.scrollingTo = setTimeout(function() {
+      $(this).trigger('scrollEnd');
+  }, 300); //throttle: time to wait after the resize is done...
+
+});
+
+
+
+$(window).bind('scrollEnd', function(){
+	var left = $(window).scrollLeft() ;
+	//	alert('left = ' + left);
+	if( left < 20){
+		$('#prev').addClass('off');
+	}else{
+		$('#prev').removeClass('off');
+	}
+})
+
 
 ///////////// init + misc view functions
 function initView(){
@@ -70,6 +90,17 @@ function initTemplates(context, callbackHome){
 	renderTemplate(context, 'section#credit', '/templates/credit.html', {title: "hello!"}, true);	
 	renderTemplate(context, 'section#home', '/templates/home.html', {gal: Gallery.all()}, true, function(context){
 		callbackHome(context);
+		//bind action to next / prev bt
+	
+		$('#prev').unbind('click touch').bind('click touch', function(){
+			//$(this).addClass('binded');
+			pan(-5); //we want to return to menu, not just pan back...
+			$('#prev').removeClass('off'); //just to bypass the throttle delay...
+		});
+		$('#next').unbind('click touch').bind('click touch', function(){
+			$(this).addClass('binded');
+			pan(1);
+		});
 	});
 }
 
@@ -79,6 +110,13 @@ function scrollBase(){
 		$('html').scrollTo({ top:0, left:0, }, {duration:300});
 	}
 }
+
+function pan(direction){ //-1:left,  1:right
+	var amount =  $(window).width() -250; //use window . width - 100px...
+	var offsetStr = '+='+ (amount*direction);
+	$('html').scrollTo({ top:0, left:offsetStr, }, {duration:200});
+}
+
 
 function formatYear(yyyy){
 	return yyyy.toString().slice(2);
