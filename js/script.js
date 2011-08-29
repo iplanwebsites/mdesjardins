@@ -105,11 +105,9 @@ function initTemplates(context, callbackHome){
 }
 
 function scrollBase(){
-	// !! first check if we NEED to scroll there...
 	if(this.scrollBase) clearTimeout(this.scrollBase);
   this.scrollBase = setTimeout(function() {
-      if($(window).scrollLeft() > 0){
-				alert('scrollBase');
+      if($(window).scrollLeft() > 0){//  first check if we NEED to scroll there...
 				$('html').scrollTo({ top:0, left:0, }, {duration:100}); 
 			}
   }, 50); //throttle: //just to avoid double eventing
@@ -188,7 +186,7 @@ sammy = Sammy('body', function () {
 			 //scrollBase();
 			if(! $('section#home').hasClass('visited') ){
 				$('html').scrollTo({ top:0, left:190 }, 50);
-				$('section#home').addClass('visited');
+				
 			}
 			bodyClass(context, 'home');
 			sammy.runRoute ( 'get', '/#/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
@@ -206,6 +204,9 @@ sammy = Sammy('body', function () {
 		bodyClass(context, 'home');
 		scrollBase();
 		initTemplates(context, function(context){
+			if(! $('section#home .gallery').hasClass('loaded') ){
+				sammy.runRoute ( 'get', '/#/photos/2011_fall');  //if it's the first page, we load first collection...
+			}
 			//alert('call back!!');
 		});
 	}); 
@@ -226,6 +227,8 @@ sammy = Sammy('body', function () {
 		$('header .btCol strong').text(gal.attr('season') +" "+ gal.attr('year'));
 		initTemplates(context, function(context){
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
+					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
+					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
 					$('#home nav a.active').removeClass('active');//Interface FX (active bt)
 					$('#home nav a.'+col).addClass('active');
 					$(".gallery img").one('load', function() {//FADE IMG on load...
@@ -234,7 +237,6 @@ sammy = Sammy('body', function () {
 					  if(this.complete) $(this).load(); //fix caching event not firing
 					});
 					$(".gallery img").unbind('click touch').bind('click touch', function() {//bind scrolling behavior on img clicks
-						alert('img click');
 						$('html').scrollTo(this, 300, {axis: 'x'});
 						//alert('touch img');
 					});
