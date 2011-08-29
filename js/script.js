@@ -81,7 +81,7 @@ function initTemplates(context, callbackHome){
 	
 	renderTemplate(context, 'footer', '/templates/footer.html', {title: "hello!"}, true);
 	renderTemplate(context, 'header', '/templates/header.html', {title: "hello!"}, true, function(context){
-		$('header .bt').bind('click touch', function() {//Adding action to header buttons (mindless of route changes)
+		$('header .bt').unbind('click touch').bind('click touch', function() {//Adding action to header buttons (mindless of route changes)
 			scrollBase();
 		});
 	});
@@ -106,9 +106,13 @@ function initTemplates(context, callbackHome){
 
 function scrollBase(){
 	// !! first check if we NEED to scroll there...
-	if($('html').scrollLeft() > 0){
-		$('html').scrollTo({ top:0, left:0, }, {duration:300});
-	}
+	if(this.scrollBase) clearTimeout(this.scrollBase);
+  this.scrollBase = setTimeout(function() {
+      if($(window).scrollLeft() > 0){
+				alert('scrollBase');
+				$('html').scrollTo({ top:0, left:0, }, {duration:100}); 
+			}
+  }, 50); //throttle: //just to avoid double eventing
 }
 
 function pan(direction){ //-1:left,  1:right
@@ -182,9 +186,13 @@ sammy = Sammy('body', function () {
 		initTemplates(context, function(context){
 			 //alert('call back!!');
 			 //scrollBase();
-			$('html').scrollTo({ top:0, left:190 }, 50);
+			if(! $('section#home').hasClass('visited') ){
+				$('html').scrollTo({ top:0, left:190 }, 50);
+				$('section#home').addClass('visited');
+			}
 			bodyClass(context, 'home');
 			sammy.runRoute ( 'get', '/#/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
+			
 				
 		});
 	}); 
@@ -195,7 +203,7 @@ sammy = Sammy('body', function () {
 		//This Route shows the menu, but doesn't change the content!
 		var col = this.params['col'];
 		//alert("col = "+ col);
-bodyClass(context, 'home');
+		bodyClass(context, 'home');
 		scrollBase();
 		initTemplates(context, function(context){
 			//alert('call back!!');
@@ -225,7 +233,8 @@ bodyClass(context, 'home');
 					}).each(function() {
 					  if(this.complete) $(this).load(); //fix caching event not firing
 					});
-					$(".gallery img").bind('click touch', function() {//bind scrolling behavior on img clicks
+					$(".gallery img").unbind('click touch').bind('click touch', function() {//bind scrolling behavior on img clicks
+						alert('img click');
 						$('html').scrollTo(this, 300, {axis: 'x'});
 						//alert('touch img');
 					});
