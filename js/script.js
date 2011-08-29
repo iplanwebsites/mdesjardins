@@ -232,8 +232,8 @@ sammy = Sammy('body', function () {
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
 					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
 					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
-					$('#home nav a.active').removeClass('active');//Interface FX (active bt)
-					$('#home nav a.'+col).addClass('active');
+					$('#home #navHome a.active').removeClass('active');//Interface FX (active bt)
+					$('#home  #navHome a.'+col).addClass('active');
 					$(".gallery img").one('load', function() {//FADE IMG on load...
 					  $(this).removeClass('loading');
 					}).each(function() {

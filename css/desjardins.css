@@ -118,13 +118,13 @@ header h1{ padding:0px; margin:auto; color:#fff;
 
 
 /* GALLERY */
-#home nav{ 
+#home  #navHome{ 
 	height:100%; float:left; 
 	width:160px; margin-right:5px; 
 	padding-left:20px;
 	}
-#home nav h1{ font-size:22px; padding-left:10px;}
-#home nav a{ 
+#home  #navHome h1{ font-size:22px; padding-left:10px;}
+#home  #navHome a{ 
 	display:block; text-decoration:none;
 	color:#d0d0d0;
 	padding:2px 10px ;
@@ -138,11 +138,11 @@ header h1{ padding:0px; margin:auto; color:#fff;
 	transition: all 0.1s ease-in-out;
 	opacity:0.5;
  }
-#home nav a:hover{ opacity:1; }
+#home  #navHome a:hover{ opacity:1; }
 
-#home nav a .year{ font-weight:bold; }
-#home nav a .season{ font-weight:normal; }
-#home nav a .arrow{ 
+#home  #navHome a .year{ font-weight:bold; }
+#home  #navHome a .season{ font-weight:normal; }
+#home  #navHome a .arrow{ 
 	display:block; float:right; background:#f00; 
 	background:url('../img/arrow.png'); 
 	margin-right:-18px;
@@ -155,9 +155,9 @@ header h1{ padding:0px; margin:auto; color:#fff;
 	transition: all 0.6s ease-in-out;
 	}
 
-#home nav a.active{ opacity:1; text-decoration:underline;}
+#home  #navHome a.active{ opacity:1; text-decoration:underline;}
 
-#home nav a img.video{width:120px; 
+#home  #navHome a img.video{width:120px; 
 }
 .gallery{ 
 	border-left:solid 3px #fff; padding-left:15px; 
@@ -178,7 +178,7 @@ header h1{ padding:0px; margin:auto; color:#fff;
 	-ms-transition: all 0.6s ease-in-out;
 	transition: all 0.6s ease-in-out;
 	}
-#home nav a.active .arrow{ 
+#home  #navHome a.active .arrow{ 
 	opacity:1; 	
 	}
 
