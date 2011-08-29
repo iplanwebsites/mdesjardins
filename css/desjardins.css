@@ -193,7 +193,6 @@ header h1{ padding:0px; margin:auto; color:#fff;
 		width:80px;
 		height:80px;
 		border-radius:10px;
-		background:#0f0;
 		color:#fff;
 		z-index:10000;
 		position:fixed;
@@ -209,7 +208,7 @@ header h1{ padding:0px; margin:auto; color:#fff;
 		transition: all 0.2s ease-in-out;
 		margin:0;
 	}
-	.arrows div:hover{opacity:1;}
+	.arrows div:hover{opacity:1; border:2px solid #fff ; }
 
 	.arrows #prev{
 		left:40px;
