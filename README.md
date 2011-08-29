@@ -4,12 +4,8 @@
 ## TOdo
 
 
- - initialisation: problem on secton loading...
-
- - scrollBase condition too restrictive (doesn't rerutn to base anymore)
- - scrollBase fired multiple time, cause Queing. Maybe stopAnim?
  
-
+- fix credits layout...
  
  - purple underline on MD.
  
@@ -25,4 +21,3 @@
  
  - test on IE...
  
- - empty/hide alternate content (it jumps on load..)

@@ -1,4 +1,5 @@
 /* Author: I Plan Websites .com  */
+
 $(document).ready(function() {
 
 /////////////// UTILS - not project specefic
@@ -22,18 +23,6 @@ $(window).scroll(function(){
 });
 
 
-
-$(window).bind('scrollEnd', function(){
-	var left = $(window).scrollLeft() ;
-	//	alert('left = ' + left);
-	if( left < 20){
-		$('#prev').addClass('off');
-	}else{
-		$('#prev').removeClass('off');
-	}
-})
-
-
 ///////////// init + misc view functions
 function initView(){
 	//fadeIn animation
@@ -55,6 +44,20 @@ function initView(){
 	});
 	$(window).trigger('adjustCssSizes'); //we also trigger the view fix on init 
 	
+	
+
+	$(window).bind('scrollEnd', function(){
+		var left = $(window).scrollLeft() ;
+		//	alert('left = ' + left);
+		if( left < 20){
+			$('#prev').addClass('off');
+		}else{
+			$('#prev').removeClass('off');
+		}
+	})
+
+
+
 	sammy.run('/#/');
 	
 }
