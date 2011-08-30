@@ -2,6 +2,9 @@
 
 $(document).ready(function() {
 
+
+
+lang = 'fr';
 /////////////// UTILS - not project specefic
   
  
