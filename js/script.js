@@ -268,7 +268,7 @@ sammy = Sammy('body', function () {
 		
 		
 		initTemplates(context, function(context){
-			renderTemplate(context, '#home .gallery', '/templates/gal_vid1.html', {gal: gal}, false, function(context){  //false = no chache of templ.
+			renderTemplate(context, '#home .gallery', '/templates/vid.html', {video: '28364274'}, false, function(context){  //false = no chache of templ.
 					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
 					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
 					$('#home #navHome a.active').removeClass('active');//Interface FX (active bt)
