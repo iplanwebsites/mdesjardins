@@ -155,14 +155,16 @@ span.le{
 .ruebox{
 	width:170px;
 	float:left;
-	margin:15px 0 0 30px;
+	margin:0px 0 0 30px;
 }
 .ruebox h3{
 	font-size:15px;
 	color:#ccc;
 }
+
+.content{background:#222;}
 .bountiquebox h2 { padding-top:15px;}
-.bountiquebox p{padding-left:30px;  width:240px; font-size:12px; color:#aaa; padding-top:5px;}
+.bountiquebox p{padding-left:30px;  width:240px; font-size:12px; color:#aaa; padding-top:0px; padding-bottom:0; margin:0; }
 .lunbox{
 	background:#000;
 	width:120px;
@@ -180,7 +182,6 @@ span.le{
 .fisherbox{
 	background:url('/img/contentboxbbg.png') repeat;
 	width:307px;
-	height:138px;
 	margin-top:20px;
 	border:#555 solid 1px;
 	padding-bottom:10px;
@@ -188,12 +189,12 @@ span.le{
 .fisherbox h3{
 	font-size:23px;
 	color:#fff;
-	padding:10px 0 0 30px;
+	padding:0px 0 0 30px;
 }
 .fisherbox h2{
 	font-size:12px;
 	color:#aaa;
-	padding:10px 0 0 30px;
+	padding:0px 0 0 30px;
 }
 .line{
 	border:3px solid #575757;
@@ -359,6 +360,7 @@ span.logo{
 	top:10px;
 	right:20px;
 	padding-bottom:20px;
+	padding-left:20px;
 }
 .textbgboxL{
 	width:430px;
@@ -372,11 +374,13 @@ span.logo{
 	text-transform:uppercase;
 	padding:10px;
 	padding-top:20px;
+	margin-bottom:0px;
+	white-space:nowrap;
 }
 .textbgboxL p{
 	font-size:13px;
 	color:#fff;
-	padding:20px 0 0 10px;
+	padding:0px 0 0 10px;
 	font-weight:bold;
 }
 .textbgboxL p a{
@@ -385,7 +389,7 @@ span.logo{
 .textbgboxr{
 	width:300px;
 	float:right;
-	margin-top:110px;
+	margin-top:60px;
 	margin-right:20px;
 }
 .textbgboxr h2{

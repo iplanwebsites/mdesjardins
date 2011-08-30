@@ -20,3 +20,7 @@
  - special font? orator
  
  - BG tile weirdly online (chrome)
+ 
+ - buy pro acccount? (vimeo)
+ 
+ - fix type size and spacing...
