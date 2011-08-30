@@ -1,16 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-body{
-	background:#151515;
-	font-family:Arial, Helvetica, sans-serif;
-	margin:0;
-	padding:0;
-}
-div, h1, h2, h3, h4, ul, li, p{
-	margin:0;
-	padding:0;
-}
+
 .clr{
 	clear:both;
 }

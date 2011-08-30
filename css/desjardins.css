@@ -13,6 +13,9 @@ body, html{
 font-family: 'LatoRegular', arial, sans, sans-serif;
 	font-family: 'Orator Std', arial, helvetica;
 	font-family: helvetica, arial, sans;
+
+font-family: helvetica, arial, sans;
+	font-family: Calibri, arial, 'Century Schoolbook', arial;
 	
 	}
 html.js #seo{ display:none;}
@@ -98,14 +101,18 @@ header nav a.bt{ padding:  6px 15px 4px 15px; background:#313131;
 header nav a:hover{ color:#fff; background:#444; text-decoration:none;}
 header nav a.btCol{ float:left; }
 header a, header h1{text-decoration:none; border:none;}
-header h1{ padding:0px; margin:auto; color:#fff; 
-	font-size:26px; display:block; 
+header h1{ 
+	padding:0px; margin:auto; color:#fff; 
+	font-size:22px; display:block; 
 	text-align:center;
 	width:100%;
 	position:fixed;
 	z-index:-10;
 	cursor:default;
 	text-decoration:none;
+	text-transform:uppercase;
+	letter-spacing:7px;
+
 }
 
 #fade_l, #fade_r{ width:40px;  z-index:10; position:fixed; height:100%; opacity:0.6; }
