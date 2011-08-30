@@ -163,7 +163,7 @@ span.le{
 }
 
 .content{background:#222;}
-.bountiquebox h2 { padding-top:15px;}
+.bountiquebox h2 { padding-top:1px;}
 .bountiquebox p{padding-left:30px;  width:240px; font-size:12px; color:#aaa; padding-top:0px; padding-bottom:0; margin:0; }
 .lunbox{
 	background:#000;
@@ -190,6 +190,7 @@ span.le{
 	font-size:23px;
 	color:#fff;
 	padding:0px 0 0 30px;
+	line-height:1em;
 }
 .fisherbox h2{
 	font-size:12px;
@@ -307,12 +308,14 @@ span.para{
 	color:#fff;
 }
 .camerbox{
-	margin-top:20px;
+	margin-top:0px;
 }
 .camerbox h2{
 	font-size:13px;
 	color:#fff;
-	text-transform:capitalize;
+	text-transform:none;
+	line-height:1.2em;
+	margin:0;
 }
 .brod{
 	border:1px solid #c07195;
