@@ -130,7 +130,7 @@ function formatYear(yyyy){
 
 function bodyClass(context, section){
  //if(! $('body').hasClass(section)){  //we make sure we don'T hcange class, if we remain in the same main section
-	$('body').removeClass('info bio home col credit');
+	$('body').removeClass('info bio home col credit video photo');
 	$('body').addClass(section);
 	
 	//alert('section = '+section);
@@ -230,6 +230,9 @@ sammy = Sammy('body', function () {
 		$('header .btCol strong').text(gal.attr('season') +" "+ gal.attr('year'));
 		initTemplates(context, function(context){
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
+					$('#home').addClass('photo_content');
+					$('#home').removeClass('video_content');
+					
 					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
 					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
 					$('#home #navHome a.active').removeClass('active');//Interface FX (active bt)
@@ -249,6 +252,52 @@ sammy = Sammy('body', function () {
 	}); // eo route
 
 	///////////////////////
+	
+	
+	this.get('/#/video/:col', function (context) {
+	//	alert('col route!!');
+	
+		var col = this.params['col'];
+		bodyClass(context, 'home');
+		//scrollBase();
+		
+		// $('html').scrollTo({ top:0, left:200 }, 200); //!! TWEAK value!
+		var gal = Gallery.select(function() { //selecting the galery model (json bit)
+		  return this.attr("id") == col
+		}).first();
+		
+		
+		$('header .btCol strong').text(gal.attr('season') +" "+ gal.attr('year'));
+		
+		
+		initTemplates(context, function(context){
+			renderTemplate(context, '#home .gallery', '/templates/gal_vid1.html', {gal: gal}, false, function(context){  //false = no chache of templ.
+					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
+					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
+					$('#home #navHome a.active').removeClass('active');//Interface FX (active bt)
+					$('#home  #navHome a.vid_'+col).addClass('active'); //!!!
+				
+				$('#home').removeClass('photo_content');
+				$('#home').addClass('video_content');
+				
+				/*	$(".gallery img").one('load', function() {//FADE IMG on load...
+					  $(this).removeClass('loading');
+					}).each(function() {
+					  if(this.complete) $(this).load(); //fix caching event not firing
+					});
+					
+					$(".gallery img").unbind('click touch').bind('click touch', function() {//bind scrolling behavior on img clicks
+						$('html').scrollTo(this, 300, {axis: 'x'});
+						//alert('touch img');
+					});*/
+					
+			}); // eo render
+		}); //eo call back for initTemplate	
+	}); // eo route
+
+	///////////////////////
+	
+	
 	this.get('/#/infos', function (context) {
 		//alert("infos");
 		bodyClass(context, 'info');

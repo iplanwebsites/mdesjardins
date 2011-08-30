@@ -206,7 +206,7 @@ span.le{
 	margin:10px 5px 0 0;
 }
 .textbox h2{
-	font-size:24px;
+	font-size:20px;
 	color:#fff;
 	font-weight:normal;
 	padding:0 0 0 5px;
@@ -338,11 +338,13 @@ span.logo{
 	float:left;
 }
 .textbgboxL h2{
-	font-size:24px;
+	font-size:20px;
+	line-height:1em;
 	color:#fff;
 	font-weight:normal;
 	text-transform:uppercase;
 	padding:10px;
+	padding-top:20px;
 }
 .textbgboxL p{
 	font-size:13px;

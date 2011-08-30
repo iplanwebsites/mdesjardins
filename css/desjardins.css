@@ -162,8 +162,14 @@ header h1{ padding:0px; margin:auto; color:#fff;
 	}
 #home  #navHome a.active{ color:#d0d0d0; text-decoration:underline;}
 
-#home  #navHome a img.video{width:120px; 
+#home  #navHome a.video img{
+	width:130px; 
+	border:solid 1px #ccc;
 }
+
+
+
+
 .gallery{ 
 	border-left:solid 3px #fff; padding-left:15px; 
 	display:inline; float:left; 
@@ -193,8 +199,8 @@ header h1{ padding:0px; margin:auto; color:#fff;
 
 	.arrows{ float:left; }
 	.arrows div{
-		width:80px;
-		height:80px;
+		width:40px;
+		height:40px;
 		border-radius:10px;
 		color:#fff;
 		z-index:10000;
@@ -212,16 +218,16 @@ header h1{ padding:0px; margin:auto; color:#fff;
 		margin:0;
 		border:2px solid #000;
 	}
-	
+	.video_content .arrows	{display:none;}
 	.arrows div:hover{opacity:1; border:2px solid #fff ; }
 
 	.arrows #prev{
 		left:40px;
-		background:#000 url('../img/arrow_white_prev.png') center  no-repeat;
+		background:#000 url('../img/arrow_white_prev_small.png') center  no-repeat;
 	}
 	.arrows #next{
 		right:40px;
-		background:#000 url('../img/arrow_white_next.png') center no-repeat;
+		background:#000 url('../img/arrow_white_next_small.png') center no-repeat;
 	}
 	.arrows #prev.off{ margin-left:-150px; }
 	.arrows #next.off{ margin-right:-150px; }
