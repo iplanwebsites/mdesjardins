@@ -175,8 +175,6 @@ sammy = Sammy('body', function () {
 		this.use(Sammy.Template, "html");
 		this.use('Title');
 		this.use(Sammy.JSON);
-		//this.use(Sammy.Haml); //default uses .template file ext for templates
-
 
 
 
@@ -185,10 +183,9 @@ sammy = Sammy('body', function () {
 		
 		
 		initTemplates(context, function(context){
-			 //alert('call back!!');
-			 //scrollBase();
+		
 			if(! $('section#home').hasClass('visited') ){
-				$('html').scrollTo({ top:0, left:190 }, 50);
+				// $('html').scrollTo({ top:0, left:190 }, 50);  //disabled for now...
 				
 			}
 			bodyClass(context, 'home');
