@@ -44,6 +44,7 @@ function initView(){
 			$('section#bio').css('height', gal_h);
 			$('section#credit').css('height', gal_h);
 			// ALSO adjust Width accordingly???
+			$('#home .gallery').width( 5000 ); //Hardcoded !! we'd need the gal ratio + nbImg objects...
 	});
 	$(window).trigger('adjustCssSizes'); //we also trigger the view fix on init 
 	
