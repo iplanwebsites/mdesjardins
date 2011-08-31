@@ -60,7 +60,15 @@ function initView(){
 		}
 	})
 
-
+	//bind mouse-wheel event :)
+	$(function() {
+	   $(window).mousewheel(function(event, delta) {
+				// src: http://css-tricks.com/snippets/jquery/horz-scroll-with-mouse-wheel/
+	      event.preventDefault();
+				var scroll = $(window).scrollLeft();
+				$(window).scrollLeft(scroll - (delta * 30));
+	   });
+	});
 
 	sammy.run('/#/');
 	
