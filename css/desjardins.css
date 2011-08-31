@@ -4,7 +4,9 @@ MD accent: 31c5ea
 
 */
 nav{}
-
+body{
+	overflow-x: scroll;
+}
 body, html{
 	height:100%; min-height:100%; color:#fff; 
 	background:#000;
@@ -22,6 +24,12 @@ font-family: helvetica, arial, sans;
 	
 	}
 html.js #seo{ display:none;}
+
+body.info #home .gallery, body.bio #home .gallery, body.credit #home .gallery {display:none; }
+body.info #home.in .gallery, body.bio #home.in .gallery, body.credit #home.in .gallery {display:inline; }
+body.info #home.out .gallery, body.bio #home.out .gallery, body.credit #home.out .gallery{display:inline; }
+/* animated sections are excluded temporarily... */
+
 
 #cache {
     background: #000;

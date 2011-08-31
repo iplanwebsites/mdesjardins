@@ -36,7 +36,7 @@ function initView(){
 	});
 	$(window).bind('resizeEnd adjustCssSizes', function() {
 	    //do something, window hasn't changed size in 500ms
-	    var window_h = $(window).height();
+	    var window_h = $(window).height() ;
 			var gal_h = window_h - (70 + 60);  //these are the footer + header height...
 			if(gal_h >=800){gal_h=800}//set max height
 			$('section#home').css('height', gal_h);
@@ -224,11 +224,19 @@ sammy = Sammy('body', function () {
 		//scrollBase();
 		
 		// $('html').scrollTo({ top:0, left:200 }, 200); //!! TWEAK value!
+		$('html').scrollTo({ top:0, left:0 }, 200);
 		var gal = Gallery.select(function() { //selecting the galery model (json bit)
 		  return this.attr("id") == col
 		}).first();
-		$('header .btCol strong').text(gal.attr('season') +" "+ gal.attr('year'));
+		$('header .btCol strong').text(gal.attr('season')[lang] +" "+ gal.attr('year'));
 		initTemplates(context, function(context){
+			//calculate gallery target W:
+			var ratio = gal.attr('ratio'); //the ratio of images in the gallery, about 2:3
+			var nbImg = gal.attr('nbImg');
+			var h = $('#home .gallery').height();
+			var w = h * nbImg * ratio + (nbImg * 5); 
+			$('#home .gallery').width( 120 + w );
+			
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
 					$('#home').addClass('photo_content');
 					$('#home').removeClass('video_content');
@@ -267,11 +275,15 @@ sammy = Sammy('body', function () {
 		}).first();
 		
 		
-		$('header .btCol strong').text(gal.attr('season') +" "+ gal.attr('year'));
+		$('header .btCol strong').text(gal.attr('season')[lang] +" "+ gal.attr('year'));
 		
 		
 		initTemplates(context, function(context){
+			
+			$('#home .gallery').width(0); //to test in IE
+			
 			renderTemplate(context, '#home .gallery', '/templates/vid.html', {video: '28364274'}, false, function(context){  //false = no chache of templ.
+					
 					$('section#home .gallery').addClass('loaded'); //we knoe there's a leat one gallery loaded on page
 					$('section#home').addClass('visited');// we'll know if it's the first pagview also.
 					$('#home #navHome a.active').removeClass('active');//Interface FX (active bt)
@@ -303,6 +315,7 @@ sammy = Sammy('body', function () {
 		bodyClass(context, 'info');
 		scrollBase();
 		initTemplates(context, function(context){
+			
 			//alert('call back!!');
 		});
 	}); // eo route
@@ -312,6 +325,7 @@ sammy = Sammy('body', function () {
 		bodyClass(context, 'bio');
 		scrollBase();
 		initTemplates(context, function(context){
+			
 			//alert('call back!!');
 		});
 	}); // eo route

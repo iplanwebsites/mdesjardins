@@ -1,57 +1,93 @@
 [
     {
         "id": "2011_fall",
+        "ratio": "0.75",
         "nbImg": "6",
         "year": "2011",
-        "season": "Automne",
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        },
         "link-video": "/videos/fall_2001"
     },
     {
         "id": "2011_spring",
+        "ratio": "0.66666",
         "nbImg": "4",
         "year": "2011",
-        "season": "Printemps"
+        "season": {
+            "fr": "Printemps",
+            "en": "Spring"
+        }
     },
     {
         "id": "2010_fall",
+        "ratio": "0.66666",
         "nbImg": "12",
         "year": "2010",
-        "season": "Automne"
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        }
     },
     {
         "id": "2010_spring",
+        "ratio": "0.66666",
         "nbImg": "8",
         "year": "2010",
-        "season": "Printemps"
+        "season": {
+            "fr": "Printemps",
+            "en": "Spring"
+        }
     },
     {
         "id": "2009_fall",
+        "ratio": "0.66666",
         "nbImg": "8",
         "year": "2009",
-        "season": "Automne"
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        }
     },
     {
         "id": "2008_spring",
+        "ratio": "0.66666",
         "nbImg": "7",
         "year": "2008",
-        "season": "Printemps"
+        "season": {
+            "fr": "Printemps",
+            "en": "Spring"
+        }
     },
     {
         "id": "2006_fall",
+        "ratio": "0.66666",
         "nbImg": "4",
         "year": "2006",
-        "season": "Automne"
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        }
     },
     {
         "id": "2006_spring",
+        "ratio": "0.66666",
         "nbImg": "6",
         "year": "2006",
-        "season": "Printemps"
+        "season": {
+            "fr": "Printemps",
+            "en": "Spring"
+        }
     },
     {
         "id": "2005_fall",
+        "ratio": "0.601",
         "nbImg": "10",
         "year": "2005",
-        "season": "Automne"
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        }
     }
 ]
