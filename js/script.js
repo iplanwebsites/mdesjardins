@@ -37,7 +37,7 @@ function initView(){
 	$(window).bind('resizeEnd adjustCssSizes', function() {
 	    //do something, window hasn't changed size in 500ms
 	    var window_h = $(window).height() ;
-			var gal_h = window_h - (70 + 60);  //these are the footer + header height...
+			var gal_h = window_h - (65 + 40);  //these are the footer + header height...
 			if(gal_h >=800){gal_h=800}//set max height
 			$('section#home').css('height', gal_h);
 			$('section#info').css('height', gal_h);
