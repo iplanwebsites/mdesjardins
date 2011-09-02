@@ -3,9 +3,8 @@
 
 ## Todo
 
-- intro anim..., with cache???
 
-- credits: layout.
+ - credits: layout.
 
  - IE image stretch on BIO
  
@@ -17,6 +16,7 @@
  
  - test on IE...
  
+ -verify XML compatibility of each tempaltes, and all generated pages.
  
  
  - buy pro acccount? (vimeo)
