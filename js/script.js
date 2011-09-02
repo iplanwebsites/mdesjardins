@@ -30,10 +30,24 @@ $(window).scroll(function(){
 function initView(){
 	//fadeIn animation
 	$('#seo').remove();
-	$('#cache').addClass('invisible').delay(1200).queue(function(next){
-		$('#cache').remove(); //we remove the DOM node once anim is over...
-		next();
+	if(Modernizr.transition){
+		var introDuration = 3000;
+	}else{
+		var introDuration = 0;
+	}
+	$("#cache img").one('load', function() {//FADE IMG on load...
+	  $(this).removeClass('loading');
+	}).each(function() {
+	  if(this.complete) $(this).load(); //fix caching event not firing
 	});
+	
+	$('#cache').delay(2200).queue(function(next){
+		$('#cache').addClass('invisible').delay(1200).queue(function(next){
+			$('#cache').remove(); //we remove the DOM node once anim is over...
+			next();
+		});
+	});//eo second queue..
+	
 	$(window).bind('resizeEnd adjustCssSizes', function() {
 	    //do something, window hasn't changed size in 500ms
 	    var window_h = $(window).height() ;
