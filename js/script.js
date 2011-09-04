@@ -88,6 +88,18 @@ function initView(){
 	
 }
 
+function setLang(langParam){
+	if(langParam == "fr"){
+		lang = 'fr';
+		$('body').addClass('fr');
+		$('body').removeClass('en');
+	}else{
+		lang = 'en';
+		$('body').addClass('en');
+		$('body').removeClass('fr');
+	}	
+}
+
 
 function renderTemplate(context, elem, path, templateData, cache, callback){
 	if( $(elem).hasClass('inDom') && cache){
