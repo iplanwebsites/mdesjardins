@@ -208,8 +208,6 @@ header h1 {
     z-index: 10;
     position: fixed;
     height: 100%;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    filter: alpha(opacity=60);
     opacity: 0.6
     }
 
