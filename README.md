@@ -4,7 +4,6 @@
 ## Todo
 
 
- - credits: layout.
 
  - IE image stretch on BIO
  
