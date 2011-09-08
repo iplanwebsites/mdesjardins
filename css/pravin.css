@@ -511,8 +511,9 @@ img.miaou{ padding-top: 20px; margin-left:-5px; padding-bottom: 15px; }
 img.iplan{ padding-top: 10px; }
 
 
+.a_interview{ font-weight:bold; }
 
 
-
-
+.info a{ color:#ccc; margin-top:10px; display:block; text-decoration:none;}
+.info a:hover{ color:#fff; text-decoration:underline;}
 
