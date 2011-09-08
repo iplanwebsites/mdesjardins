@@ -261,11 +261,11 @@ body.home nav a.btCol, body.info nav a.btInfo, body.bio nav a.btBio, body.credit
     }
 
 #home #navHome a .year {
-    font-weight: bold
+    font-weight: normal
     }
 
 #home #navHome a .season {
-    font-weight: normal
+    font-weight: bold
     }
 
 #home #navHome a .arrow {
