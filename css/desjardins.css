@@ -271,7 +271,7 @@ body.home nav a.btCol, body.info nav a.btInfo, body.bio nav a.btBio, body.credit
 #home #navHome a .arrow {
     display: block;
     float: right;
-    background: #f00;
+    background: #000;
     background: url(../img/arrow.png) no-repeat;
     margin-right: -18px;
     margin-top: 3px;

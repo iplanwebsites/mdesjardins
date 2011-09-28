@@ -32,7 +32,13 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; 
 	/*  overflow-y: scroll;  !!! DELETED */
-	-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+	overflow-y:scroll;
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%; 
+	
+	}
+	
+
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 
@@ -192,9 +198,10 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 /* 
  * 1. Remove default vertical scrollbar in IE6/7/8/9 
  * 2. Allow only vertical resizing
- */
-
+ 
+*/
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
 
 /* Colors for form validity */
 input:valid, textarea:valid {  }

@@ -58,7 +58,10 @@ function initView(){
 			$('section#bio').css('height', gal_h);
 			$('section#credit').css('height', gal_h);
 			// ALSO adjust Width accordingly???
-			$('#home .gallery').width( 5000 ); //Hardcoded !! we'd need the gal ratio + nbImg objects...
+			
+			/// !!! IEFIX
+			// $('#home').width( 5000 ); //Hardcoded !! we'd need the gal ratio + nbImg objects...
+			
 	});
 	$(window).trigger('adjustCssSizes'); //we also trigger the view fix on init 
 	
@@ -270,8 +273,9 @@ sammy = Sammy('body', function () {
 			var nbImg = gal.attr('nbImg');
 			var h = $('#home .gallery').height();
 			var w = h * nbImg * ratio + (nbImg * 5); 
-			$('#home .gallery').width( 120 + w );
-			
+		//	$('#home .gallery').width( 120 + w );  /// !!! IEFIX
+			$('#home').width( 320 + w );  /// !!! IEFIX
+			$('#home .gallery').width( 320 + w );  /// !!! IEFIX
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
 					$('#home').addClass('photo_content');
 					$('#home').removeClass('video_content');
