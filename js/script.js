@@ -272,10 +272,10 @@ sammy = Sammy('body', function () {
 			var ratio = gal.attr('ratio'); //the ratio of images in the gallery, about 2:3
 			var nbImg = gal.attr('nbImg');
 			var h = $('#home .gallery').height();
-			var w = h * nbImg * ratio + (nbImg * 5); 
+			var w = h * nbImg * ratio + ((nbImg+1) * 5); 
 		//	$('#home .gallery').width( 120 + w );  /// !!! IEFIX
-			$('#home').width( 320 + w );  /// !!! IEFIX
-			$('#home .gallery').width( 320 + w );  /// !!! IEFIX
+			$('#home').width( 520 + w );  /// !!! IEFIX
+			$('#home .gallery').width( 520 + w );  /// !!! IEFIX
 			renderTemplate(context, '#home .gallery', '/templates/gal.html', {gal: gal}, false, function(context){  //false = no chache of templ.
 					$('#home').addClass('photo_content');
 					$('#home').removeClass('video_content');
