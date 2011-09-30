@@ -92,16 +92,27 @@ function initView(){
 
 
 	//language selection
-	
 	//if user already visited the website, check the cookie
-	
 	//else, use the browser language, default to FR.
+	browserLang = browsLang();
+	browserLang = browserLang.substr(0,2);
+	if( $.cookie('lang') == 'en' ||  browserLang =='en'){
+		myLang = 'en';
+	}else{
+		myLang = 'fr';
+	}
 	
-	myLang = 'fr';
 	sammy.run('/#/'+myLang);
 	
 }
 
+
+// browser detect - returns the users browsers language preference
+function browsLang() {
+	return ( navigator.language || navigator.userLanguage );
+}
+	
+	
 function setLang(langParam){
 	//alert('setLang = ' +langParam);
 
@@ -117,8 +128,9 @@ function setLang(langParam){
 	}
 	
 	//TODO: LANG! re-render all templates...
-	$('section#home, section#credit, section#bio, section#info, footer, header').addClass('toUpdate'); //this way, cached templates will be refreshed...
- }
+	$('section#home.inDom, section#credit.inDom, section#bio.inDom, section#info.inDom, footer.inDom, header.inDom').addClass('toUpdate'); //this way, cached templates will be refreshed...
+ 	$.cookie('lang', lang);  //save it for future use...
+}
 
 }
 
