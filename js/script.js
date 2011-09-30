@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
 
-lang = 'fr';
+lang = 'en';
 /////////////// UTILS - not project specefic
   
  
