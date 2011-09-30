@@ -3,8 +3,9 @@
 $(document).ready(function() {
 
 
+dev = true;
 
-lang = 'en';
+lang = '';//just to make sure it's global?
 /////////////// UTILS - not project specefic
   
  
@@ -48,6 +49,8 @@ function initView(){
 		});
 	});//eo second queue..
 	
+	if(dev){$('#cache').remove();} //no anim, right away!
+	
 	$(window).bind('resizeEnd adjustCssSizes', function() {
 	    //do something, window hasn't changed size in 500ms
 	    var window_h = $(window).height() ;
@@ -87,11 +90,22 @@ function initView(){
 	   });
 	});
 
-	sammy.run('/#/');
+
+	//language selection
+	
+	//if user already visited the website, check the cookie
+	
+	//else, use the browser language, default to FR.
+	
+	myLang = 'fr';
+	sammy.run('/#/'+myLang);
 	
 }
 
 function setLang(langParam){
+	//alert('setLang = ' +langParam);
+
+ if (lang != langParam){
 	if(langParam == "fr"){
 		lang = 'fr';
 		$('body').addClass('fr');
@@ -100,7 +114,11 @@ function setLang(langParam){
 		lang = 'en';
 		$('body').addClass('en');
 		$('body').removeClass('fr');
-	}	
+	}
+	
+	//TODO: LANG! re-render all templates...
+ }
+
 }
 
 
@@ -220,8 +238,8 @@ sammy = Sammy('body', function () {
 
 
 		/////////////// LOAD ROUTE (homepage)
-		this.get('/#/', function (context) {
-		
+		this.get('/#/:lang', function (context) {
+		setLang(this.params['lang']);
 		
 		initTemplates(context, function(context){
 		
@@ -238,15 +256,16 @@ sammy = Sammy('body', function () {
 
 
 	///////////////
-	this.get('/#/collections', function (context) {
-		//This Route shows the menu, but doesn't change the content!
+	this.get('/#/:lang/collections', function (context) {
+		//This Route shows the menu, but doesn't change the content
+		setLang(this.params['lang']);
 		var col = this.params['col'];
 		//alert("col = "+ col);
 		bodyClass(context, 'home');
 		scrollBase();
 		initTemplates(context, function(context){
 			if(! $('section#home .gallery').hasClass('loaded') ){
-				sammy.runRoute ( 'get', '/#/photos/2011_fall');  //if it's the first page, we load first collection...
+				sammy.runRoute ( 'get', '/#/'+lang+'/photos/2011_fall');  //if it's the first page, we load first collection...
 			}
 			//alert('call back!!');
 		});
@@ -255,8 +274,9 @@ sammy = Sammy('body', function () {
 
 
 	//////////////////
-	this.get('/#/photos/:col', function (context) {
+	this.get('/#/:lang/photos/:col', function (context) {
 	//	alert('col route!!');
+		setLang(this.params['lang']);
 		var col = this.params['col'];
 		bodyClass(context, 'home');
 		//scrollBase();
@@ -301,9 +321,8 @@ sammy = Sammy('body', function () {
 	///////////////////////
 	
 	
-	this.get('/#/video/:col', function (context) {
-	//	alert('col route!!');
-	
+	this.get('/#/:lang/video/:col', function (context) {
+		setLang(this.params['lang']);
 		var col = this.params['col'];
 		bodyClass(context, 'home');
 		//scrollBase();
@@ -349,8 +368,8 @@ sammy = Sammy('body', function () {
 	///////////////////////
 	
 	
-	this.get('/#/infos', function (context) {
-		//alert("infos");
+	this.get('/#/:lang/infos', function (context) {
+		setLang(this.params['lang']);
 		bodyClass(context, 'info');
 		scrollBase();
 		initTemplates(context, function(context){
@@ -360,7 +379,8 @@ sammy = Sammy('body', function () {
 	}); // eo route
 	
 	
-	this.get('/#/bio', function (context) {
+	this.get('/#/:lang/bio', function (context) {
+		setLang(this.params['lang']);
 		bodyClass(context, 'bio');
 		scrollBase();
 		initTemplates(context, function(context){
@@ -369,7 +389,8 @@ sammy = Sammy('body', function () {
 		});
 	}); // eo route
 	
-	this.get('/#/credits', function (context) {
+	this.get('/#/:lang/credits', function (context) {
+		setLang(this.params['lang']);
 		bodyClass(context, 'credit');
 		scrollBase();
 		initTemplates(context, function(context){
