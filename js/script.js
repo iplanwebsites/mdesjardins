@@ -117,20 +117,22 @@ function setLang(langParam){
 	}
 	
 	//TODO: LANG! re-render all templates...
+	$('section#home, section#credit, section#bio, section#info, footer, header').addClass('toUpdate'); //this way, cached templates will be refreshed...
  }
 
 }
 
 
 function renderTemplate(context, elem, path, templateData, cache, callback){
-	if( $(elem).hasClass('inDom') && cache){
+	if( $(elem).hasClass('inDom') && cache && (!($(elem).hasClass("toUpdate")))  ){
 		if($.isFunction(callback)){
 			callback(context); //if temlate already loaded, we just call the callBakc right away.
 		}
-	}else{
+	}else{  //we refresh the template
 	  context.render(path, templateData)
 	   .replace(context.$element(elem)).then(function(content) {
 				$(elem).addClass('inDom');
+				$(elem).removeClass('toUpdate');
 				if($.isFunction(callback)){
 					callback(context);
 				}
