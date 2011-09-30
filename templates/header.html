@@ -4,16 +4,17 @@
     > 
     <strong>Fall 2011</strong>
   </a>
+  <% if(lang=='fr'){ %>
+      <a href="/#/en" class="btLang bt">English</a>
+<% }else{ %>
+  <a href="/#/fr" class="btLang bt">Français</a>
+  <% } %>
   <a href="/#/<%= lang %>/credits" class="btCredit bt"><% if(lang=='fr'){ %>Crédits<% }else{ %>Credits<% } %></a>
   <a href="/#/<%= lang %>/bio" class="btBio bt">Bio</a>
   <a href="/#/<%= lang %>/infos" class="btInfo bt">Informations</a>
   
   
-  <% if(lang=='fr'){ %>
-      <a href="/#/en" class="btInfo lang">English</a>
-<% }else{ %>
-  <a href="/#/fr" class="btInfo lang">Français</a>
-  <% } %>
+  
   <!-- 
 <%= Math.random() %>
   -->

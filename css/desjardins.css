@@ -154,6 +154,8 @@ section.active {
 body.home #main_scroll{ margin-top: 0px; }
 */
 /* HEADER */
+header .logo img{margin-left:-190px;}
+
 header nav {
     padding: 10px 15px;
     padding-top: 16px
