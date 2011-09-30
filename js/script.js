@@ -248,7 +248,7 @@ sammy = Sammy('body', function () {
 				
 			}
 			bodyClass(context, 'home');
-			sammy.runRoute ( 'get', '/#/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
+			sammy.runRoute ( 'get', '/#/'+lang+'/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
 			
 				
 		});

@@ -8,7 +8,7 @@
     <!-- 
    <h1>Videos2</h1>-->
    
-   <a href="/#/video/2011_fall" class="video vid_fall_2011">
+   <a href="/#/<%= lang%>/video/2011_fall" class="video vid_fall_2011">
      <img src="/img/video1_play.jpg" />
    </a>
    </div>
@@ -17,7 +17,7 @@
   <h1>Photos</h1>
   -->
   <% for ( var i = 0; i < gal.length; i++ ) { %>
-  <a href="/#/photos/<%= gal[i].attr('id') %>" class="<%= gal[i].attr('id') %>">
+  <a href="/#/<%= lang%>/photos/<%= gal[i].attr('id') %>" class="<%= gal[i].attr('id') %>">
     <span class="arrow"></span>
     
     <span class="year"><%= gal[i].attr('season')[lang] %></span>
@@ -29,27 +29,6 @@
   
   
 
-  <!-- 
-  <a href="/#/videos/spring_2011">
-<img scr="http://www.webdesign.org/img_articles/7072/BW-kitten.jpg" class="video"/>
-    
-  </a>
-  
-  <a href="/col/fall_2011">
-    <span class="season">fall</span>
-    <span class="year">2011</span>
-  </a>
-  
-  <a href="/col/fall_2011">
-    <span class="season">fall</span>
-    <span class="year">2011</span>
-  </a>
-  
-  <a href="/col/fall_2011">
-    <span class="season">fall</span>
-    <span class="year">2011</span>
-  </a>
-  -->
   
 </div><!-- eo nav -->
 
@@ -65,8 +44,3 @@
   <div id="next"></div>
 </div>
 
-
-
-<!-- 
-
--->
