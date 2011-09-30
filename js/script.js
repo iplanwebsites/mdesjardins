@@ -94,14 +94,19 @@ function initView(){
 	//language selection
 	//if user already visited the website, check the cookie
 	//else, use the browser language, default to FR.
-	browserLang = browsLang();
-	browserLang = browserLang.substr(0,2);
-	if( $.cookie('lang') == 'en' ||  browserLang =='en'){
-		myLang = 'en';
-	}else{
-		myLang = 'fr';
-	}
 	
+	if( $.cookie('lang') == 'en' ||  $.cookie('lang') == 'fr'){
+		myLang = $.cookie('lang');
+	}else{ //no cookies, check browser lang...
+		browserLang = browsLang();
+		browserLang = browserLang.substr(0,2);
+		if( browserLang =='en'){
+			myLang = 'en';
+		}else{ 
+			myLang = 'fr';
+		}
+	}
+
 	sammy.run('/#/'+myLang);
 	
 }
