@@ -267,7 +267,7 @@ sammy = Sammy('body', function () {
 				
 			}
 			bodyClass(context, 'home');
-			sammy.runRoute ( 'get', '/#/'+lang+'/photos/2011_fall'); //we load the current collection by default but don't stack in history!!
+			sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_spring'); //we load the current collection by default but don't stack in history!!
 			
 				
 		});
@@ -284,7 +284,7 @@ sammy = Sammy('body', function () {
 		scrollBase();
 		initTemplates(context, function(context){
 			if(! $('section#home .gallery').hasClass('loaded') ){
-				sammy.runRoute ( 'get', '/#/'+lang+'/photos/2011_fall');  //if it's the first page, we load first collection...
+				sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_spring');  //if it's the first page, we load first collection...
 			}
 			//alert('call back!!');
 		});

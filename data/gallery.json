@@ -1,5 +1,15 @@
 [
     {
+        "id": "2012_spring",
+        "ratio": "0.618",
+        "nbImg": "15",
+        "year": "2012",
+        "season": {
+            "fr": "Printemps",
+            "en": "Spring"
+        }
+    },
+    {
         "id": "2011_fall",
         "ratio": "0.75",
         "nbImg": "6",
