@@ -2,12 +2,36 @@
 
 $(document).ready(function() {
 
-
-dev = true;
+dev = (window.location.hostname == '127.0.0.1');
 
 lang = '';//just to make sure it's global?
 /////////////// UTILS - not project specefic
-  
+credits_info = {
+	"en" : {
+		"photo": "Photography",
+		"stylist": "Stylist(s)",
+		"da": "Artistic Direction",
+		"makeup": "Makeup",
+		"hair": "Hair",
+		"model": "Model",
+		"jewelry": "Jewelry",
+		"shoes":"shoes",
+		"accessories": "Accessories",
+		"assistantphoto": "Photo Assistant"
+		},
+	"fr" : {
+			"photo": "Photographe",
+	  	"stylist": "Styliste(s)",
+	  	"da": "Direction artistique",
+	  	"makeup": "Maquillage",
+	  	"hair": "Coiffure",
+	  	"model": "Mannequin(s)",
+	  	"jewelry": "Bijoux",
+	  	"shoes":"Chaussures",
+	  	"accessories": "Accessoires",
+	  	"assistantphoto": "Assistant photo"
+		}
+	};  
  
 $(window).resize(function() {
     if(this.resizeTO) clearTimeout(this.resizeTO);
@@ -267,7 +291,7 @@ sammy = Sammy('body', function () {
 				
 			}
 			bodyClass(context, 'home');
-			sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_spring'); //we load the current collection by default but don't stack in history!!
+			sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_fall'); //we load the current collection by default but don't stack in history!!
 			
 				
 		});
@@ -284,7 +308,7 @@ sammy = Sammy('body', function () {
 		scrollBase();
 		initTemplates(context, function(context){
 			if(! $('section#home .gallery').hasClass('loaded') ){
-				sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_spring');  //if it's the first page, we load first collection...
+				sammy.runRoute ( 'get', '/#/'+lang+'/photos/2012_fall');  //if it's the first page, we load first collection...
 			}
 			//alert('call back!!');
 		});
@@ -311,7 +335,7 @@ sammy = Sammy('body', function () {
 			var ratio = gal.attr('ratio'); //the ratio of images in the gallery, about 2:3
 			var nbImg = gal.attr('nbImg');
 			var h = $('#home .gallery').height();
-			var w = h * nbImg * ratio + ((nbImg+1) * 5); 
+			var w = h * nbImg * ratio + ((nbImg+2) * 5); 
 		//	$('#home .gallery').width( 120 + w );  /// !!! IEFIX
 			$('#home').width( 520 + w );  /// !!! IEFIX
 			$('#home .gallery').width( 520 + w );  /// !!! IEFIX

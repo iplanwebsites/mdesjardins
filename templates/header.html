@@ -1,34 +1,23 @@
 <nav>
-  <a href="/#/<%= lang %>/collections" class="bt btCol">
-    Collections 
-    > 
-    <strong>Fall 2011</strong>
-  </a>
-  <% if(lang=='fr'){ %>
-      <a href="/#/en" class="btLang bt">English</a>
-<% }else{ %>
-  <a href="/#/fr" class="btLang bt">Français</a>
-  <% } %>
-  <a href="/#/<%= lang %>/credits" class="btCredit bt"><% if(lang=='fr'){ %>Crédits<% }else{ %>Credits<% } %></a>
-  <a href="/#/<%= lang %>/bio" class="btBio bt">Bio</a>
-  <a href="/#/<%= lang %>/infos" class="btInfo bt">Informations</a>
+  <a href="/#/<%= lang %>/" class="logo"><h1 >Michel Desjardins</h1></a>
   
-  
-  
-  <!-- 
-<%= Math.random() %>
-  -->
+	<div class="menu">
+	  <a href="/#/<%= lang %>/collections" class="bt btCol">
+	    Collections &#155; <strong><% if(lang=='fr'){ %>Automne <% } else { %>Fall <% } %> 2012</strong>
+	  </a>
+	  
+	<!--   <a href="/#/<%= lang %>/credits" class="btCredit bt"><% if(lang=='fr'){ %>Crédits<% }else{ %>Credits<% } %></a> -->
+	  <a href="/#/<%= lang %>/bio" class="btBio bt">Bio</a>
+	  <a href="/#/<%= lang %>/infos" class="btInfo bt"><% if(lang=='fr'){ %>Contact + Points de vente<% }else{ %>Contact + Stockists<% } %></a>
+	  <% if(lang=='fr'){ %>
+	      <a href="/#/en" class="btLang bt">English</a>
+	<% }else{ %>
+	  <a href="/#/fr" class="btLang bt">Français</a>
+	  <% } %>
+	  
+	</div>
   
 
-  
-  
-  <a href="/#/">
-   <h1 class="logo">
-    <!--  Michel Desjardins
-    -->
-    <img src="/img/logo_md_s.gif" alt="Michel Desjardins" />
-    </h1>
-  </a>
   
 </nav>
 

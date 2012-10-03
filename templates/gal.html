@@ -2,3 +2,26 @@
 
 <img src="/img/<%= gal.attr('id') %>/<%= i %>.jpg" class="loading" />
 <% } %>
+
+<% if ( gal.attr('credits') ) { %>
+	<div class="credits">
+		<% if(lang=='fr'){ %>
+		      <h2>Cr&eacute;dits</h2>
+	
+		<% }else{ %>
+		  <h2>Credits</h2>
+	
+		  <% } %>
+		  
+		  <% if ( gal.attr('credits').da ) { %><p><%= credits_info[lang].da %> <br><em><%= gal.attr('credits').da %></em></p><% } %>
+		  <% if ( gal.attr('credits').photo ) { %><p> <%= credits_info[lang].photo %> <br><em><%= gal.attr('credits').photo %></em></p><% } %>
+		  <% if ( gal.attr('credits').assistantphoto ) { %><p> <%= credits_info[lang].assistantphoto %> <br><em><%= gal.attr('credits').assistantphoto %></em></p><% } %>
+		  <% if ( gal.attr('credits').stylist ) { %><p><%= credits_info[lang].stylist %> <br><em><%= gal.attr('credits').stylist %></em></p><% } %>
+		  <% if ( gal.attr('credits').makeup ) { %><p><%= credits_info[lang].makeup %> <br><em><%= gal.attr('credits').makeup %></em></p><% } %>
+		  <% if ( gal.attr('credits').hair ) { %><p><%= credits_info[lang].hair %> <br><em><%= gal.attr('credits').hair %></em></p><% } %>
+		  <% if ( gal.attr('credits').model ) { %><p><%= credits_info[lang].model %> <br><em><%= gal.attr('credits').model %></em></p><% } %>
+		  <% if ( gal.attr('credits').accessories ) { %><p><%= credits_info[lang].accessories %> <br><em><%= gal.attr('credits').accessories %></em></p><% } %>
+		  <% if ( gal.attr('credits').jewelry ) { %><p><%= credits_info[lang].jewelry %> <br><em><%= gal.attr('credits').jewelry %></em></p><% } %>
+		  <% if ( gal.attr('credits').shoes ) { %><p><%= credits_info[lang].shoes %> <br><em><%= gal.attr('credits').shoes %></em></p><% } %>
+	</div>
+<% } %>

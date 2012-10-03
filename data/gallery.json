@@ -1,4 +1,23 @@
 [
+		{
+        "id": "2012_fall",
+        "ratio": "0.618",
+        "nbImg": "9",
+        "year": "2012",
+        "season": {
+            "fr": "Automne",
+            "en": "Fall"
+        },
+        "credits": {
+	        "photo": "C&eacute;sar Ochoa",
+	        "stylist": "Serge Jean Laviolette",
+	        "makeup": "Mika Holborow",
+	        "hair": "Amy Nstylist",
+	        "model": "Catherine Cloutier De Dulcedo Models Management",
+	        "jewelry": "Kaufmann De Suisse",
+	        "shoes": "Rosenstein Paris"
+        }
+    },
     {
         "id": "2012_spring",
         "ratio": "0.618",
@@ -7,6 +26,13 @@
         "season": {
             "fr": "Printemps",
             "en": "Spring"
+        },
+        "credits": {
+        	"photo": "&Eacute;tienne Saint-Denis",
+	        "da": "Lu Philippe Guillemette",
+	        "makeup": "Ana-Maria Cimpoia",
+	        "model": "Jeanne ( Montage )",
+	        "accessories": "Holt Renfrew, American Apparel"
         }
     },
     {
@@ -18,7 +44,19 @@
             "fr": "Automne",
             "en": "Fall"
         },
-        "link-video": "/videos/fall_2001"
+        "link-video": "/videos/fall_2001",
+        "credits": { 
+        	"da": "Serge Jean Laviolette",
+        	"photo": "Roberto Ugarte",
+        	"assistantphoto": "Marie-Michelle",
+	        "stylist": "Lu Philippe Guilmette",
+	        "makeup": "Charlotte-Marie Flannery",
+	        "hair": "Charlotte-Marie Flannery",
+	        "model": "Victorya (Folio)",
+	        "jewelry": "Claudia, Danah H., Isabelle May",
+	        "shoes": "Aldo",
+	        "accessories": "Essentiel"	        
+        }
     },
     {
         "id": "2011_spring",
